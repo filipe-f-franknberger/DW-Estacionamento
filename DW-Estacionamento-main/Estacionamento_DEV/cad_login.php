@@ -45,28 +45,35 @@
     </script>
 
 </head>
-<body class="simple-linear">
+<body>
+<div class="content">
     <h1>Cadastro</h1>
-    <form action="acao.php" method="post">
+    <br>
+    <form action="acao.php" method="post"> <a href="login.php"><button type="button" class="btn btn-primary">Voltar</button></a>
+    <br> <br>
         <div class="form-floating">
         <input type="text" class="form-control" id="cad_id" name="cad_id"placeholder="ID" value=<?php if (isset($usuario)) echo $usuario['cad_id']; else echo 0; ?>>
         <label for="id">ID</label>
         </div>
+        <br>
         <div class="form-floating">
         <input class="form-control" type="text" id="cad_nome" name="cad_nome"value=<?php if(isset($usuario))echo $usuario['cad_nome'] ?>>
         <label for="nome">Nome</label>
         </div>
+        <br>
         <div class="form-floating">
         <input class="form-control" type="email" id="cad_email" name="cad_email" value=<?php if (isset($usuario)) echo $usuario['cad_email'] ?>>
         <label for="email">Email</label>
         </div>
+        <br>
         <div class="form-floating">
         <input class="form-control" type="password" id="cad_senha" name="cad_senha" value=<?php if (isset($usuario)) echo $usuario['cad_senha'] ?>>
         <label for="senha">Senha</label>
         </div>
-
+        <br>
         <button type="submit" class="btn btn-primary" name='log_acao' value='registrar'>Cadastrar</button>
     </form>
+    </div>
 
 </body>
 </html>

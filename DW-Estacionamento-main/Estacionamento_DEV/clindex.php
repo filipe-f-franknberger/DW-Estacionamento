@@ -19,34 +19,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="CSS2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title>Estacionamento</title>
     
     <head> 
-    <h1></h1>
-    <h5>      Seja bem-vindo(a) <a href="login.php"><a href="login.php"><button type="button" class="btn btn-primary">Logout</button></a>
-    </h5>
-
-    AQUI VOCÊ PODERÁ VER, CADASTRAR, EDITAR E REMOVER OS CARROS E CLIENTES.
-
-   <br>
-    <a href="cad_veiculo.php"><button type="button" class="btn btn-primary">Cadastro veículo</button></a>
-    <a href="cad_cliente.php"><button type="button" class="btn btn-primary">Cadastro cliente</button></a>
-    <br>
-
+  
 </head>
-<body class="simple-linear" rgb(172, 203, 250) ; >
-<section>
+<body>
+<nav class="navbar navbar-dark bg-dark" style="background-color: indigo;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="login.php">Logout</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="cad_cliente.php">Cadastro Cliente</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="cad_veiculo.php">Cadastro Veículo</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <br>
+    <h3 >AQUI VOCÊ PODERÁ VER, CADASTRAR, EDITAR E REMOVER OS VEÍCULOS E CLIENTES.</h3 >
+   <br>
+    <section>
+      <h2>Lista de clientes:</h2>
             <form action="" method="post" id="pesquisa" >
                 <input type="text" class="form-control" placeholder="Buscar cliente" name="busca" id="busca">
+                <br>
                 <button type="submit" class="btn btn-dark" name="buscar" id="buscar">Buscar</button>
             </form>
   </section>
-  
+    <br>
   <section>
-      <h2>Lista de clientes:</h2>
       <div class="table-responsive">
             <?php    
 
@@ -67,7 +81,7 @@
                     $stnt->execute();
 
                     $clientes = $stnt->fetchAll();
-                    echo'<table class="table table-info table-striped">';
+                    echo'<table class="table "table-secondary" table-striped">';
                     echo '<tr><th>id</th><th>Nome</th><th>Sobrenome</th><th>Email</th><th>Senha</th><th>Cidade</th><th>Alterar</th><th>Deletar</th></tr>';
                     foreach($clientes as $cliente){
                         $editar = '<a href=cad_cliente.php?acao=editar&id='.$cliente['id'].'>Alt</a>';
@@ -81,18 +95,19 @@
                  }
                 ?>
                 </div>
+                </div>
     </section>
-
+    <div class="container">
     <section>
+      <h2>Lista de veículos:</h2>
             <form action="" method="post" id="pesquisa" >
-                <input type="text" class="form-control" placeholder="Buscar veículo" name="busca2" id="busca2">
+                <input type="text" class="form-control" placeholder="Buscar veículo" name="busca2" id="busca2"> <br>
                 <button type="submit" class="btn btn-dark" name="buscar2" id="buscar2">Buscar</button>
 
 
             </form>
-  </section>
+  </section> <br>
   <section>
-      <h2>Lista de veículos:</h2>
       <div class="table-responsive">
             <?php    
 
@@ -113,7 +128,7 @@
                     $stnt->execute();
 
                     $veiculos = $stnt->fetchAll();
-                    echo'<table class="table table-info table-striped">';
+                    echo'<table class="table "table-secondary" table-striped">';
                     echo '<tr><th>id</th><th>Modelo</th><th>Placa</th><th>Cor</th><th>Alterar</th><th>Deletar</th></tr>';
                     foreach($veiculos as $veiculo){
                       $editar = '<a href=cad_veiculo.php?acao=editar&id='.$veiculo['id'].'>Alt</a>';
@@ -126,6 +141,7 @@
                     die();
                  }
                 ?>
+                </div>
                 </div>
     </section>
 </body>

@@ -1,0 +1,109 @@
+:root{
+    --color-white: #fff;
+    --color-red: #e63636;
+    --color-dark1: #474a4e;
+    --color-dark2: #05ffc9;
+    --color-purple1: #9333FF;
+    --color-purple2: indigo;
+}
+
+table{
+background-color: #dcd3e7;
+color: #ada6b4;
+
+}
+
+.content{
+    background-color: var(--color-dark2);
+    padding: 2rem;
+    border-radius: 10px;
+    min-width: 30%;
+    overflow: auto;
+}
+
+h1{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3{
+    margin-bottom: 1rem;
+    text-align: center;
+    color: indigo;
+}
+
+.box-select{
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+    gap: 1rem;
+}
+
+button[type="submit"]{
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    background-color: rgb(119, 18, 190);
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--color-purple1);
+}
+
+button[type="button"]{
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    background-color: rgb(119, 18, 190);
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button[type="button"]:hover{
+    background-color: var(--color-purple1);
+}
+
+@media screen and (max-width: 576px) {
+    .box-select{
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    section ,  aside{
+        width: 100%;
+        padding: 0%;
+        background-color: rgb(80, 41, 41);
+        margin: auto;
+
+    }
+
+}
+@media screen and (max-width: 600px){
+    div li{
+    text-align: center;
+    background-color: rgb(83, 34, 34);
+    width: 100%;
+    margin: auto;
+    }
+
+}
+@media screen and (max-width:300px){
+    table{
+        background-color: rgb(172, 203, 250) ;
+    }
+    img{
+        width: 100%;
+    }
+}

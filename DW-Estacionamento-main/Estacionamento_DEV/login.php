@@ -16,28 +16,29 @@ include_once 'conexao.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
-        
-<body class="simple-linear">
-    
+<body ">
+    <div class="content">
+
     <h1>Login</h1>
-    <form  action="acao.php" id="log_form" method="post">
-        <div class="inputbox">
-        <div class="form-floating">
-        <input class="form-control" type="text" id="login_nome" name="login_nome"  >
-        <label for="login_nome">Usuário</label>
-
-        </div>
-        <div class="form-floating">
-        <input class="form-control" type="password" id="login_senha" name="login_senha" >
-        <label for="login_senha">Senha</label>
-
-        </div>
+    <form  action="acao.php" id="log_form" method="post" >
        
-        <button type="submit" class="btn btn-primary" id="log_acao" name='log_acao' value='logar' >Enviar</button> 
-        <a href="cad_login.php" class="btn btn-primary">Registrar</a>
+        <div>
+        <input class="inputs" type="text" id="login_nome" name="login_nome" placeholder="Nome" >
+        <span class="span-required">3 ou mais caracteres</span>
         </div>
-    </form>
+         <br>
+        <div>
+        <input class="inputs" type="password" id="login_senha" name="login_senha" placeholder="Senha" >
+        <span class="span-required">8 ou mais caracteres</span>
+        </div>
+        <br>   
+        <div>
+        <button type="submit" class="btn btn-primary" id="log_acao" name='log_acao' value='logar' >Enviar</button> 
+        <a href="cad_login.php"><button type="button" class="btn btn-primary" >Registrar</button> </a>
+        </div>
 
+    </form>
+    </div>
 </body>
 
 

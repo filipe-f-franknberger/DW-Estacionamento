@@ -55,34 +55,39 @@
         }
     </script>
 </head>
-<body class="simple-linear">
+<body >
+<div class="content">
+    <br>
 
-    <h1>Cadastrar Clientes</h1>  <a href="clindex.php"><button type="button" class="btn btn-primary">Voltar</button></a>
+    <br><br>
+    <h1>Cadastro cliente</h1> 
+    <a href="clindex.php"><button type="button" class="btn btn-primary">Voltar</button></a>
+    <br><br>
     <form action="acao.php" method="post">
         <div class="form-floating">
         <input type="text" class="form-control" id="id" name="id"placeholder="ID" value=<?php if (isset($cliente)) echo $cliente['id']; else echo 0; ?>>
         <label for="id">ID</label>
-        </div>
+        </div><br>
         <div class="form-floating">
         <input class="form-control" type="text" id="nome" name="nome"value=<?php if(isset($cliente))echo $cliente['nome'] ?>>
         <label for="nome">Nome</label>
-        </div>
+        </div><br>
         <div class="form-floating">
         <input class="form-control" type="text" id="sobrenome" name="sobrenome"value=<?php if(isset($cliente))echo $cliente['sobrenome'] ?>>
         <label for="sobrenome">Sobrenome</label>
-        </div>
+        </div><br>
         <div class="form-floating">
         <input class="form-control" type="email" id="email" name="email" value=<?php if (isset($cliente)) echo $cliente['email'] ?>>
         <label for="email">Email</label>
-        </div>
+        </div><br>
         <div class="form-floating">
         <input class="form-control" type="password" id="senha" name="senha" value=<?php if (isset($cliente)) echo $cliente['senha'] ?>>
         <label for="senha">Senha</label>
-        </div>
+        </div><br>
         <div class="form-floating">
         <input class="form-control" type="text" id="cidade" name="cidade" value=<?php if (isset($cliente))echo $cliente['cidade'] ?>>
         <label for="cidade">Cidade</label>
-        </div>
+        </div><br>
         
         <button type="submit" class="btn btn-primary" name='cli_acao' value='registrar'>Enviar</button>
     </form>
